@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TCEA Canteen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🍽️ TCEA Canteen</h1>
+  <p>College Canteen Ordering System</p>
+</header>
+
+<div id="home" class="page active">
+  <h2>Select Category</h2>
+
+  <div class="grid">
+    <div class="card" onclick="showPage('veg')">🥗 Veg</div>
+    <div class="card" onclick="showPage('nonveg')">🍗 Non-Veg</div>
+    <div class="card" onclick="showPage('snacks')">🍟 Snacks</div>
+    <div class="card" onclick="showPage('drinks')">🥤 Drinks</div>
+  </div>
+</div>
+
+<div id="veg" class="page">
+  <h2>🥗 Veg Items</h2>
+
+  <div class="item"><span>Veg Thali - ₹80</span><input type="number" min="0" value="0" id="vegThali"></div>
+  <div class="item"><span>Paneer Curry - ₹100</span><input type="number" min="0" value="0" id="paneer"></div>
+  <div class="item"><span>Veg Biryani - ₹90</span><input type="number" min="0" value="0" id="vegBiryani"></div>
+  <div class="item"><span>Curd Rice - ₹50</span><input type="number" min="0" value="0" id="curdRice"></div>
+  <div class="item"><span>Tomato Rice - ₹55</span><input type="number" min="0" value="0" id="tomatoRice"></div>
+  <div class="item"><span>Lemon Rice - ₹50</span><input type="number" min="0" value="0" id="lemonRice"></div>
+  <div class="item"><span>Veg Fried Rice - ₹75</span><input type="number" min="0" value="0" id="vegFriedRice"></div>
+
+  <div class="btn-box">
+    <button class="back" onclick="goBack()">Back</button>
+    <button onclick="openPopup()">Send Order</button>
+  </div>
+</div>
+
+<div id="nonveg" class="page">
+  <h2>🍗 Non-Veg Items</h2>
+
+  <div class="item"><span>Chicken Biryani - ₹120</span><input type="number" min="0" value="0" id="chickenBiryani"></div>
+  <div class="item"><span>Egg Curry - ₹70</span><input type="number" min="0" value="0" id="eggCurry"></div>
+  <div class="item"><span>Chicken Fry - ₹110</span><input type="number" min="0" value="0" id="chickenFry"></div>
+  <div class="item"><span>Egg Rice - ₹80</span><input type="number" min="0" value="0" id="eggRice"></div>
+  <div class="item"><span>Chicken Noodles - ₹100</span><input type="number" min="0" value="0" id="chickenNoodles"></div>
+  <div class="item"><span>Egg Biryani - ₹90</span><input type="number" min="0" value="0" id="eggBiryani"></div>
+
+  <div class="btn-box">
+    <button class="back" onclick="goBack()">Back</button>
+    <button onclick="openPopup()">Send Order</button>
+  </div>
+</div>
+
+<div id="snacks" class="page">
+  <h2>🍟 Snacks Items</h2>
+
+  <div class="item"><span>Samosa - ₹15</span><input type="number" min="0" value="0" id="samosa"></div>
+  <div class="item"><span>Puffs - ₹20</span><input type="number" min="0" value="0" id="puffs"></div>
+  <div class="item"><span>French Fries - ₹50</span><input type="number" min="0" value="0" id="fries"></div>
+  <div class="item"><span>Sandwich - ₹40</span><input type="number" min="0" value="0" id="sandwich"></div>
+  <div class="item"><span>Veg Roll - ₹45</span><input type="number" min="0" value="0" id="vegRoll"></div>
+  <div class="item"><span>Maggi - ₹35</span><input type="number" min="0" value="0" id="maggi"></div>
+  <div class="item"><span>Cutlet - ₹25</span><input type="number" min="0" value="0" id="cutlet"></div>
+
+  <div class="btn-box">
+    <button class="back" onclick="goBack()">Back</button>
+    <button onclick="openPopup()">Send Order</button>
+  </div>
+</div>
+
+<div id="drinks" class="page">
+  <h2>🥤 Drinks Items</h2>
+
+  <div class="item"><span>Tea - ₹10</span><input type="number" min="0" value="0" id="tea"></div>
+  <div class="item"><span>Coffee - ₹15</span><input type="number" min="0" value="0" id="coffee"></div>
+  <div class="item"><span>Cold Drink - ₹30</span><input type="number" min="0" value="0" id="coldDrink"></div>
+  <div class="item"><span>Lime Juice - ₹25</span><input type="number" min="0" value="0" id="limeJuice"></div>
+  <div class="item"><span>Water Bottle - ₹20</span><input type="number" min="0" value="0" id="water"></div>
+  <div class="item"><span>Badam Milk - ₹35</span><input type="number" min="0" value="0" id="badamMilk"></div>
+  <div class="item"><span>Milkshake - ₹60</span><input type="number" min="0" value="0" id="milkshake"></div>
+
+  <div class="btn-box">
+    <button class="back" onclick="goBack()">Back</button>
+    <button onclick="openPopup()">Send Order</button>
+  </div>
+</div>
+
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <h3>Enter Your Details</h3>
+
+    <input type="text" id="customerName" placeholder="Name">
+    <input type="text" id="tableNumber" placeholder="Table Number">
+
+    <div class="popup-buttons">
+      <button onclick="confirmOrder()">Confirm</button>
+      <button class="back" onclick="closePopup()">Cancel</button>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
