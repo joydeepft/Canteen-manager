@@ -49,7 +49,7 @@
   }
 
   function sendOrder(name, table) {
-    const shopkeeperNumber = "917629973099";
+    const shopkeeperNumber = "916033385150";
 
     const items = [
       { name: "Veg Thali", price: 80, id: "vegThali" },
